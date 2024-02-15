@@ -1,11 +1,14 @@
 import React from 'react'
-import {BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill} from 'react-icons/bs'
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
-
+import
+{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
+    from 'react-icons/bs'
+import
+{ BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line }
+    from 'recharts';
 
 function Home() {
 
-        const data = [
+    const data = [
         {
             name: 'Page A',
             uv: 4000,
@@ -50,39 +53,41 @@ function Home() {
         },
     ];
 
+
     return (
         <main className='main-container'>
             <div className='main-title'>
                 <h3>DASHBOARD</h3>
             </div>
+
             <div className='main-cards'>
                 <div className='card'>
                     <div className='card-inner'>
                         <h3>PRODUCTS</h3>
-                        <BsFillArchiveFill className='card_icon' />
+                        <BsFillArchiveFill className='card_icon'/>
                     </div>
                     <h1>300</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
                         <h3>CATEGORIES</h3>
-                        <BsFillGrid3X3GapFill className='card_icon' />
+                        <BsFillGrid3X3GapFill className='card_icon'/>
                     </div>
                     <h1>12</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
                         <h3>CUSTOMERS</h3>
-                        <BsPeopleFill className='card_icon' />
+                        <BsPeopleFill className='card_icon'/>
                     </div>
-                    <h1>20</h1>
+                    <h1>33</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
                         <h3>ALERTS</h3>
-                        <BsFillBellFill className='card_icon' />
+                        <BsFillBellFill className='card_icon'/>
                     </div>
-                    <h1>10</h1>
+                    <h1>42</h1>
                 </div>
             </div>
 
@@ -104,8 +109,8 @@ function Home() {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                        <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+                        <Bar dataKey="pv" fill="#8884d8" />
+                        <Bar dataKey="uv" fill="#82ca9d" />
                     </BarChart>
                 </ResponsiveContainer>
 
@@ -130,6 +135,7 @@ function Home() {
                         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                     </LineChart>
                 </ResponsiveContainer>
+
             </div>
         </main>
     )

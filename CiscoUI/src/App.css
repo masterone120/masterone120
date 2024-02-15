@@ -6,6 +6,27 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+}
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+.icon, .icon_header {
+  margin-right: 5px;
+}
+
+.close_icon {
+  color: red;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 260px 1fr 1fr 1fr;
@@ -16,7 +37,7 @@ body {
   height: 100vh;
 }
 
-/* Header */
+/* Header  */
 .header {
   grid-area: header;
   height: 60px;
@@ -30,10 +51,9 @@ body {
 .menu-icon {
   display: none;
 }
-/* END HEADER */
+/* End Header  */
 
-/* Sidebar */
-
+/* Sidebar  */
 #sidebar {
   grid-area: sidebar;
   height: 100%;
@@ -82,15 +102,20 @@ body {
 }
 
 .sidebar-responsive {
-  display: inline;!important;
+  display: inline !important;
   position: absolute;
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar
+    on small screens
+  */
   z-index: 12 !important;
 }
 
-/* END sIDEBAR */
+/* End Sidebar  */
 
-/* MAIN */
 
+/* Main  */
 .main-container {
   grid-area: main;
   overflow-y: auto;
@@ -126,7 +151,7 @@ body {
   background-color: #ff6d00;
 }
 
-card:nth-child(3) {
+.card:nth-child(3) {
   background-color: #2e7d32;
 }
 
@@ -152,4 +177,51 @@ card:nth-child(3) {
   height: 300px;
 }
 
-/* END MAIN */
+/* End Main  */
+
+
+/* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
